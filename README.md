@@ -14,26 +14,19 @@ There are several benefits to using the OOP approach, including easier debugging
 
 ### Pillars of OOP
 
-- **Encapsulation**: Has to do with scope and the fact that objects' internal states default to being private. Like the code version of separation of church and state: You can change objects interally without having to change the code that uses them or where it is implemented. It is also generally protected from being altered where it shouldn't be.
-    - Bundling code together into useful pieces.
+- **Encapsulation**: Storing methods together with their associated data (properties) in objects/classes.
+    - Think of the word capsule; you're creating little capsules of data and/or functionality.
 - **Abstraction**: Only making public/outwardly useable the pieces of code that are relevant for use elsewhere; anything else is kept for internal use only.
     - Delineating between what internal and external interfaces.
+    - Complex or unnecessary details are hidden; hide details and show essentials.
+    - Smaller and more manageable pieces of code.
 - **Inheritance**: Sharing properties/methods when one class extends another. The one being extended from (ex: Person -> Student, Person -> Professor) is called the prototype, and the relationship between all of them is called the prototype chain. 
     - Reduces repetitive code if classes or objects would share structure or information. 
     - Forms relationships and hierarchies in your code.
 - **Polymorphism**: The ability for classes and objects to take on several forms and be flexible. Like above, a Person class can be extended and used for different subclasses of people, like professors, students, or even athletes. 
     - Cuts down on need to duplicate code because if you write flexible code, you can reuse/share parts of it.
 
-<!-- Summary explanation from dev.to page:
-Encapsulation - Class objects are in a specific boundary. For example citizens in a country. They are all living within a specific boundary can governed by its laws.
-
-Abstraction - Class objects can only share public properties and hide private properties. This creates a great way of controlling its behaviour.
-
-Inheritance - We can inherit other classes and extend all there public properties.
-
-Polymorphism - Objects can take various behaviour depending on the context. -->
-
-## TypeScript data modifiers (aka access modifiers) and why we  use them: 
+## TypeScript data modifiers (AKA access modifiers): 
 
 Access modifiers, or data modifiers, allow us to specify where properties and methods are visible and editable in our code. A good way to understand these is by looking at them as belonging to different tiers that get more strict as you go. Below is a list and brief explanation of the modifiers used in TypeScript:
 
