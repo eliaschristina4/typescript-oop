@@ -2,8 +2,12 @@
 
 OBJECT-ORIENTED PROGRAMMING
 
-* (OOP) is a programming model that centers around using objects and classes to organize data. 
-* It does that through properties and methods.
+* (OOP) is a programming model that centers around using classes and objects to organize data. 
+* It does that through properties and methods within those classes/objects.
+* Classes are like templates for instances, or specific objects created from any given class.
+* There are several benefits to using the OOP approach, including easier debugging, reuse of code, flexibility, and breaking your code down into more manageable chunks.
+* These principles are summarized in the four pillars of OOP.
+
 
 
 FOUR PILLARS OF OOP
@@ -36,10 +40,14 @@ FOUR PILLARS OF OOP
         }
 
         getAccountBalance(){
-            console.log(`The balance of you ${this.type} account is ${this.balance}.`)
+            console.log(`The balance of your ${this.type} account is ${this.balance}.`)
         }
 
+        depositMoney(amount: number) {
+            return this.balance + amount;
+        }
     }
+
 
 
 /* ABSTRACTION
@@ -66,13 +74,19 @@ FOUR PILLARS OF OOP
             console.log(`The balance of your ${this.type} account is ${this._balance}.`)
         }
 
+        depositMoney(amount: number) {
+            return this._balance + amount;
+        }
+
     }
+
 
 
 /* INHERITANCE: Instances can inherit from a parent class when they "extend" it,
 and POLYMORPHISM: Objects can take various behaviour depending on the context --> Flexibility/reusability of code.
 */
 
+    // parent class / prototype
     class Animal {
         species: string
         breed: string
@@ -87,9 +101,13 @@ and POLYMORPHISM: Objects can take various behaviour depending on the context --
         makeSound(sound: string) {
             console.log(sound)
         }
+
+        eatFood(food: string) {
+            console.log('done eating ' + food)
+        }
     }
 
-    // Dog is an instance of the Animal class
+    // Dog is an instance of the Animal class, its prototype
     class Dog extends Animal { // specifies which parent class its extending or INHERITING properties/methods from
 
         playsFetch: boolean
@@ -102,9 +120,13 @@ and POLYMORPHISM: Objects can take various behaviour depending on the context --
         bark () {
             super.makeSound('bark') // POLYMORPHISM: using a unique method (bark) to pass in its own sound to parent method (makeSound)
         }
+
+        eat() {
+            this.eatFood('kibble')
+        }
     }
 
-    // Cat is an instance of the Animal class
+    // Cat is an instance of the Animal class, its prototype
     class Cat extends Animal { // specifies which parent class its extending or INHERITING properties/methods from
 
         likesHairTies: boolean
@@ -116,5 +138,9 @@ and POLYMORPHISM: Objects can take various behaviour depending on the context --
 
         meow () {
             super.makeSound('meow') // POLYMORPHISM: using a unique method (bark) to pass in its own sound to parent method (makeSound)
+        }
+
+        eat() {
+            this.eatFood('tuna')
         }
     }
