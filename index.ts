@@ -1,3 +1,5 @@
+// console.log('test')
+
 /* 
 
 OBJECT-ORIENTED PROGRAMMING
@@ -70,7 +72,7 @@ FOUR PILLARS OF OOP
             this._balance = balance
         }
 
-        getAccountBalance(){
+        private _getAccountBalance(){
             console.log(`The balance of your ${this.type} account is ${this._balance}.`)
         }
 
